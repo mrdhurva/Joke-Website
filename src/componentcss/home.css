@@ -1,26 +1,37 @@
-.jokesAndMeme{
-    /* border: 2px solid black; */
-    padding:3rem 0rem;
+.jokesAndMeme .container{
+  margin-bottom: 5rem;
 }
 
-.jokesAndMeme .jokesAccount .row,.memegenerator .row{
-    padding:1.5rem;
-    display:flex;
-    justify-content:space-evenly;
-    text-align: justify;
-    /* border:2px solid black; */
+.jokesAndMeme .container h3{
+  padding-bottom: 3rem;
+  font-size: 2rem;
 }
 
-.jokesAndMeme .jokesAccount .row .col,.memegenerator .row .col{
-    border:2px solid black;
+.jokesAndMeme .container .row{
+  padding: 2rem 0rem;
+  display: flex;
+  justify-content: space-around; 
 }
 
-.jokesAndMeme .jokesAccount .row .col a,.memegenerator .row .col a{
-    
-    /* width: fit-content; */
+.jokesAndMeme .container .row .col .card {
+  filter: drop-shadow(6px -3px 20px #808080);
+  -webkit-filter: drop-shadow(6px -3px 20px #808080);
+  -moz-filter: drop-shadow(6px -3px 20px #808080);
+  background-color: #a6b1f7;
+  border: none;
 }
 
-.jokesAndMeme .jokesAccount .row .col a,.memegenerator .row .col a{
-    text-decoration:none;
-    color:black;
+
+.jokesAndMeme .container .row .col .card .card-body{
+  padding: 2rem 1rem;
+}
+
+.jokesAndMeme .container .row .col .card .card-body a{
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.jokesAndMeme .container .row .col .card .card-body a h5{
+  font-weight: bold;
 }

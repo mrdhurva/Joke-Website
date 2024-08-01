@@ -7,57 +7,89 @@ import home from '../componentcss/home.css'
 function HomePage() {
   return (
     <div className='jokesAndMeme mt-5' >
-      <div className='container jokesAccount text-center' >
-        <h3>Jokes</h3>
-        <Row  >
+      <div className='container jokesAccount' >
+        <h3 className='text-center fw-bolder text-decoration-underline' >Jokes</h3>
+        <Row>
           <Col className='col-3' >
-            <Link to='randomjoke' >
-              <Jokes title='Random Jokes' />
-            </Link>
+          <div className='card ' >
+              <div className='card-body' >
+                <Link to='randomjoke' >
+                  <Jokes title='Random Jokes' />
+                </Link>
+              </div>
+            </div>
           </Col>
           <Col className='col-3' >
-            <Link to='dadjoke' >
-              <Jokes title='Dad Joke' />
-            </Link>
+          <div className='card' >
+              <div className='card-body' >
+                <Link to='dadjoke' >
+                  <Jokes title='Dad Jokes' />
+                </Link>
+              </div>
+            </div>
+          </Col>
+          <Col className='col-3' >
+          <div className='card' >
+              <div className='card-body' >
+                <Link to='programmingjoke' >
+                  <Jokes title='Programming Jokes' />
+                </Link>
+              </div>
+            </div>
           </Col>
         </Row>
         <Row>
           <Col className='col-3' >
-            <Link to='programmingjokes' >
-              <Jokes title='Programming Jokes' />
-            </Link>
+          <div className='card' >
+              <div className='card-body' >
+                <Link to='humorjoke' >
+                  <Jokes title='Humor Jokes' />
+                </Link>
+              </div>
+            </div>
           </Col>
           <Col className='col-3' >
-            <Link to='humorjokes' >
-              <Jokes title='Humor Jokes' />
-            </Link>
-          </Col>
-        </Row>
-        <Row>
-          <Col className='col-3' >
-            <Link to='ninjajokes' >
-              <Jokes title='Ninja Jokes' />
-            </Link>
+          <div className='card' >
+              <div className='card-body' >
+                <Link to='ninjajoke' >
+                  <Jokes title='Ninja Jokes' />
+                </Link>
+              </div>
+            </div>
           </Col>
           <Col className='col-3' >
-            <Link to='hindijokes' >
-              <Jokes title='Hindi Jokes' />
-            </Link>
+          <div className='card' >
+              <div className='card-body' >
+                <Link to='hindijoke' >
+                  <Jokes title='Hindi Jokes' />
+                </Link>
+              </div>
+            </div>
           </Col>
         </Row>
       </div>
-      <div className='container memegenerator text-center' >
-        <h2>Meme</h2>
+      <div className='container meme' >
+        <h3 className='text-center fw-bolder text-decoration-underline' >Meme</h3>
         <Row>
           <Col className='col-3' >
-            <Link to='memegenerator' >
-              <Jokes title='Meme Generator' />
-            </Link>
+            <div className='card' >
+              <div className='card-body' >
+                <Link to='memegenerator' >
+                  <Jokes title='Meme Generator' />
+                </Link>
+              </div>
+            </div>
+
           </Col>
           <Col className='col-4' >
-            <Link to='programmemegenerator' >
-              <Jokes title='Program Meme Generator' />
-            </Link>
+            <div className='card' >
+              <div className='card-body' >
+                <Link to='programmemegenerator' >
+                  <Jokes title='Programming Meme Generator' />
+                </Link>
+              </div>
+            </div>
+
           </Col>
         </Row>
       </div>
@@ -68,7 +100,7 @@ function HomePage() {
 function Jokes({ title }) {
   return (
     <>
-      <h2>{title}</h2>
+      <h5>{title}</h5>
     </>
   )
 }
