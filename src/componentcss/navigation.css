@@ -1,0 +1,27 @@
+.navigation{
+    /* border:2px solid black; */
+    padding:1.5rem;
+    background-color:#FFC300;
+}
+
+.navigation .row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation .row .col{
+    /* border: 2px solid black; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation .row .logo a{
+text-decoration: none;
+color: black;
+}
+
+.navigation .row .login a svg{
+    color: black;
+    font-size: 2rem;
+}
