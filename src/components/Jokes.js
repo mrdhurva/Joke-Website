@@ -1,6 +1,6 @@
 import React from 'react';
-import CustomHook from './CustomHook';
-import randomJoke from '../componentcss/randomJoke.css'
+import CustomHook, { CustomHookDifferentCall } from './CustomHook';
+// import randomJoke from '../componentcss/randomJoke.css'
 
 function RandomJoke(){
     const apiUrl=`https://official-joke-api.appspot.com/jokes/random/`
@@ -13,9 +13,14 @@ return(
 }
 
 function DadJoke(){
+    const apiUrl='https://dad-jokes7.p.rapidapi.com/dad-jokes/random';
+    const rapidApiKey='06c12d997emshbcee97eca4e43e2p1dd1aajsn9570a7455a1f';
+    const rapidApiHost='dad-jokes7.p.rapidapi.com';
+
     return(
-        <div className='container-fluid' >
+        <div className='container-fluid dadJoke' >
             <TitleName title='Dad Jokes' />
+            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} />
         </div>
     )
 }
