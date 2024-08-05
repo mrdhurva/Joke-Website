@@ -9,6 +9,7 @@ function CustomHook({apiCall}) {
        try {
         const apiUrl=await fetch(apiCall);
         const apiResponse=await apiUrl.json();
+        // console.log(apiResponse)
         setAPiData(apiResponse)
        } catch (error) {
         throw error;
@@ -24,8 +25,12 @@ function CustomHook({apiCall}) {
         {apiData!=null ? 
         <div className='card' >
             <div className='card-body' >
+               {apiData.type==='single' ? 
+               <p className='card-title' >{apiData.joke}</p> : 
+               <>
                 <p className='card-title' >{apiData.setup}</p>
-                <p className='card-subtitle' >{apiData.punchline}</p>
+                <p className='card-subtitle' >{apiData.delivery}</p>
+               </> }
             </div>
         </div> 
         
@@ -78,5 +83,18 @@ function CustomHookDifferentCall({apiCall,callKey,callHost}){
     )
 }
 
-export {CustomHookDifferentCall}
+function WasteHook({apiCall}){
+  const handleApiCall=async()=>{
+    const apiUrl=await fetch(apiCall);
+    const apiResponse=await apiUrl.json();
+    console.log(apiResponse)
+  }
+  return(
+    <>
+      <button type='submit' onClick={handleApiCall} >Fetch</button>
+    </>
+  )
+}
+
+export {CustomHookDifferentCall,WasteHook}
 export default CustomHook

@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomHook, { CustomHookDifferentCall } from './CustomHook';
+import CustomHook, { CustomHookDifferentCall, WasteHook } from './CustomHook';
 // import randomJoke from '../componentcss/randomJoke.css'
 
 function RandomJoke(){
@@ -26,9 +26,11 @@ function DadJoke(){
 }
 
 function ProgrammingJoke(){
+    const apiUrl='https://v2.jokeapi.dev/joke/Programming';
     return(
         <div className='container-fluid' >
             <TitleName title='Programming Jokes' />
+            <CustomHook apiCall={apiUrl} />
         </div>
     )
 }
