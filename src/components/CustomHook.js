@@ -56,8 +56,9 @@ function CustomHookDifferentCall({apiCall,callKey,callHost}){
     const handleApiData=async()=>{
         try {
             const apiUrl=await fetch(url,options);
+            console.log(apiUrl)
             const apiResponse=await apiUrl.json();
-            console.log(apiResponse.joke)
+            // console.log(apiResponse)
             setApiData(apiResponse)
         } catch (error) {
             console.log(error)

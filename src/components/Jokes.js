@@ -36,9 +36,13 @@ function ProgrammingJoke(){
 }
 
 function HumorJoke(){
+    const apiUrl='https://humor-jokes-and-memes.p.rapidapi.com/jokes/create?topics=pirates&max-length=1000';
+    const rapidApiKey='06c12d997emshbcee97eca4e43e2p1dd1aajsn9570a7455a1f';
+    const rapidApiHost='humor-jokes-and-memes.p.rapidapi.com'
     return(
         <div className='container-fluid' >
             <TitleName title='Humor Jokes' />
+            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} />
         </div>
     )
 }
@@ -75,8 +79,16 @@ function ProgrammingMemeGenerator(){
     )
 }
 
+function HumorMemeGenerator(){
+    return(
+        <div className='container-fluid' >
+            <TitleName title='Humor Meme Generator' />
+        </div>
+    )
+}
+
 function TitleName({title}){
     return<h2 className='text-center mt-5' >{title}</h2>
 }
 
-export { RandomJoke, DadJoke, ProgrammingJoke, HumorJoke, NinjaJoke, HindiJoke, MemeGenerator, ProgrammingMemeGenerator  }
+export { RandomJoke, DadJoke, ProgrammingJoke, HumorJoke, NinjaJoke, HindiJoke, MemeGenerator, ProgrammingMemeGenerator, HumorMemeGenerator  }

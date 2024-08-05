@@ -4,7 +4,7 @@ import './App.css';
 import  { HomePage } from './components/HomePage';
 import { LoginForm } from './components/LoginAndSingup';
 import Navigation from './components/Navigation';
-import { DadJoke, HindiJoke, HumorJoke, MemeGenerator, NinjaJoke, ProgrammingJoke, ProgrammingMemeGenerator, RandomJoke } from './components/Jokes';
+import { DadJoke, HindiJoke, HumorJoke, HumorMemeGenerator, MemeGenerator, NinjaJoke, ProgrammingJoke, ProgrammingMemeGenerator, RandomJoke } from './components/Jokes';
 import PageNotFound from './components/PageNotFound';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
           <Route path='/hindijoke' element={<HindiJoke/>} />
           <Route path='/memegenerator' element={<MemeGenerator/>} />
           <Route path='/programmingmemegenerator' element={<ProgrammingMemeGenerator/>} />
+          <Route path='/humormemegenerator' element={<HumorMemeGenerator/>} />
           <Route path='*' element={<PageNotFound/>} />
         </Routes>
       </BrowserRouter>

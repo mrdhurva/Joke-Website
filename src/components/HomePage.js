@@ -92,6 +92,28 @@ function HomePage() {
 
           </Col>
         </Row>
+        <Row>
+          <Col className='col-3' >
+            <div className='card' >
+              <div className='card-body' >
+                <Link to='humormemegenerator' >
+                  <Jokes title='Humor Meme Generator' />
+                </Link>
+              </div>
+            </div>
+
+          </Col>
+          {/* <Col className='col-4' >
+            <div className='card' >
+              <div className='card-body' >
+                <Link to='programmingmemegenerator' >
+                  <Jokes title='Programming Meme Generator' />
+                </Link>
+              </div>
+            </div>
+
+          </Col> */}
+        </Row>
       </div>
     </div>
   )
