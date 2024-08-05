@@ -84,7 +84,7 @@ function HomePage() {
           <Col className='col-4' >
             <div className='card' >
               <div className='card-body' >
-                <Link to='programmemegenerator' >
+                <Link to='programmingmemegenerator' >
                   <Jokes title='Programming Meme Generator' />
                 </Link>
               </div>

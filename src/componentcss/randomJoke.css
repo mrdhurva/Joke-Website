@@ -1,0 +1,28 @@
+.randomJoke .mainBody{
+    /* border: 2px solid black; */
+    padding: 2rem;
+}
+
+.randomJoke .mainBody .inputBar{
+    position: absolute;
+    right: 10rem;
+}
+
+.randomJoke .mainBody .container{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightgray;
+    height: 25rem;
+    border-radius: 0.25rem;
+    padding: 2rem 0rem;
+}
+
+.randomJoke .mainBody .container .card{
+    width: 30rem;
+    height: fit-content;
+}
+
+.randomJoke .mainBody .container .card .card-body .card-title{
+    font-weight: bold;
+}
