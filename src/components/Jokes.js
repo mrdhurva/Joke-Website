@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomHook, { CustomHookDifferentCall, WasteHook } from './CustomHook';
+import CustomHook, { CustomHindiHook, CustomHookDifferentCall, WasteHook } from './CustomHook';
 // import randomJoke from '../componentcss/randomJoke.css'
 
 function RandomJoke(){
@@ -7,7 +7,7 @@ function RandomJoke(){
 return(
     <div className='container-fluid randomJoke ' >
         <TitleName title='Random Jokes' />
-        <CustomHook apiCall={apiUrl} />
+        <CustomHook apiCall={apiUrl} btnName='Random Joke' />
     </div>
 )
 }
@@ -20,7 +20,7 @@ function DadJoke(){
     return(
         <div className='container-fluid dadJoke' >
             <TitleName title='Dad Jokes' />
-            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} />
+            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} btnName='Dad Joke' />
         </div>
     )
 }
@@ -30,7 +30,7 @@ function ProgrammingJoke(){
     return(
         <div className='container-fluid' >
             <TitleName title='Programming Jokes' />
-            <CustomHook apiCall={apiUrl} />
+            <CustomHook apiCall={apiUrl} btnName='Programming Joke' />
         </div>
     )
 }
@@ -42,23 +42,30 @@ function HumorJoke(){
     return(
         <div className='container-fluid' >
             <TitleName title='Humor Jokes' />
-            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} />
+            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} btnName='Humor Joke' />
         </div>
     )
 }
 
 function NinjaJoke(){
+    const apiUrl='https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
+    const rapidApiKey='06c12d997emshbcee97eca4e43e2p1dd1aajsn9570a7455a1f';
+    const rapidApiHost='jokes-by-api-ninjas.p.rapidapi.com';
     return(
         <div className='container-fluid' >
             <TitleName title='Ninja Jokes' />
+            <CustomHookDifferentCall apiCall={apiUrl} callKey={rapidApiKey} callHost={rapidApiHost} btnName='Ninja Joke' />
         </div>
     )
 }
 
 function HindiJoke(){
+    const apiKey='56ebb84fbd410760444775497018';
+    const api=`https://hindi-jokes-api.onrender.com/jokes?api_key=${apiKey}`
     return(
         <div className='container-fluid' >
             <TitleName title='Hindi Jokes' />
+            <CustomHindiHook apiCall={api} btnName='Hindi Joke' />
         </div>
     )
 }

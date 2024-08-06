@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import customHook from '../componentcss/customHook.css'
 
 
-function CustomHook({apiCall}) {
+function CustomHook({apiCall,btnName}) {
     const [apiData,setAPiData]=useState(null);
 
     const handleApiData=async()=>{
        try {
         const apiUrl=await fetch(apiCall);
+        // console.log(apiUrl)
         const apiResponse=await apiUrl.json();
-        // console.log(apiResponse)
+        console.log(apiResponse)  
         setAPiData(apiResponse)
        } catch (error) {
         throw error;
@@ -19,7 +20,7 @@ function CustomHook({apiCall}) {
   return (
     <div className='mainBody' >
       <div className='inputBar' >
-        <button type='submit' className='btn btn-primary' onClick={handleApiData} >Generate Random Joke</button>
+        <button type='submit' className='btn btn-primary' onClick={handleApiData} >Generate {btnName}</button>
       </div>
       <div className='container' >
         {apiData!=null ? 
@@ -41,7 +42,7 @@ function CustomHook({apiCall}) {
 }
 
 
-function CustomHookDifferentCall({apiCall,callKey,callHost}){
+function CustomHookDifferentCall({apiCall,callKey,callHost,btnName}){
     const [apiData,setApiData]=useState(null);
 
     const url=apiCall;
@@ -56,9 +57,9 @@ function CustomHookDifferentCall({apiCall,callKey,callHost}){
     const handleApiData=async()=>{
         try {
             const apiUrl=await fetch(url,options);
-            console.log(apiUrl)
+            // console.log(apiUrl)
             const apiResponse=await apiUrl.json();
-            // console.log(apiResponse)
+            console.log(apiResponse)
             setApiData(apiResponse)
         } catch (error) {
             console.log(error)
@@ -68,7 +69,7 @@ function CustomHookDifferentCall({apiCall,callKey,callHost}){
     return(
         <div className='mainBody' >
       <div className='inputBar' >
-        <button type='submit' className='btn btn-primary' onClick={handleApiData} >Generate Dad Joke</button>
+        <button type='submit' className='btn btn-primary' onClick={handleApiData} >Generate {btnName}</button>
       </div>
       <div className='container' >
         {apiData!=null || undefined ? 
@@ -84,6 +85,39 @@ function CustomHookDifferentCall({apiCall,callKey,callHost}){
     )
 }
 
+function CustomHindiHook({apiCall,btnName}){
+  const [apiData,setAPiData]=useState(null);
+
+    const handleApiData=async()=>{
+       try {
+        const apiUrl=await fetch(apiCall);
+        // console.log(apiUrl)
+        const apiResponse=await apiUrl.json();
+        // console.log(apiResponse)  
+        setAPiData(apiResponse)
+       } catch (error) {
+        throw error;
+       }
+    }
+  return(
+    <div className='mainBody' >
+      <div className='inputBar' >
+        <button type='submit' className='btn btn-primary' onClick={handleApiData} >Generate {btnName}</button>
+      </div>
+      <div className='container' >
+        {apiData!=null ? 
+        <div className='card' >
+            <div className='card-body' >
+               <p className='card-title' >{apiData.jokeContent}</p> : 
+            </div>
+        </div> 
+        
+        : null}
+      </div>
+    </div>
+  )
+}
+
 function WasteHook({apiCall}){
   const handleApiCall=async()=>{
     const apiUrl=await fetch(apiCall);
@@ -97,5 +131,5 @@ function WasteHook({apiCall}){
   )
 }
 
-export {CustomHookDifferentCall,WasteHook}
+export {CustomHookDifferentCall,WasteHook,CustomHindiHook}
 export default CustomHook
