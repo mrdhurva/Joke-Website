@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomHook, { CustomHindiHook, CustomHookDifferentCall, WasteHook } from './CustomHook';
+import CustomHook, { CustomHindiHook, CustomHookDifferentCall, CustomMemeGenerator, WasteHook } from './CustomHook';
 // import randomJoke from '../componentcss/randomJoke.css'
 
 function RandomJoke(){
@@ -74,6 +74,8 @@ function MemeGenerator(){
     return(
         <div className='container-fluid' >
             <TitleName title='Meme Generator' />
+            {/* <WasteHook apiCall='https://api.imgflip.com/get_memes' /> */}
+            <CustomMemeGenerator apiCall='https://api.imgflip.com/get_memes' btnName='Random Meme' />
         </div>
     )
 }

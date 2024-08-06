@@ -26,3 +26,8 @@
 .mainBody .container .card .card-body .card-title{
     font-weight: bold;
 }
+
+.mainBody .memeContainer{
+    /* border:  none; */
+    height: none;
+}
