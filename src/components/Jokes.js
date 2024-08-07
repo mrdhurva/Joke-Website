@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomHook, { CustomHindiHook, CustomHookDifferentCall, CustomMemeGenerator, WasteHook } from './CustomHook';
+import CustomHook, { CustomHindiHook, CustomHookDifferentCall, CustomMemeGenerator, CustomProgrammingMemeGenerator, WasteHook } from './CustomHook';
 // import randomJoke from '../componentcss/randomJoke.css'
 
 function RandomJoke(){
@@ -81,9 +81,14 @@ function MemeGenerator(){
 }
 
 function ProgrammingMemeGenerator(){
+    const apiUrl='https://programming-memes-images.p.rapidapi.com/v1/memes';
+    const apiKey='d826938a64msh57fb42b9c95b27cp10bed4jsn8a6a07919a93';
+    const apiHost='programming-memes-images.p.rapidapi.com';
+
     return(
         <div className='container-fluid' >
             <TitleName title='Programming Meme Generator' />
+            <CustomProgrammingMemeGenerator apiCall={apiUrl} callKey={apiKey} callHost={apiHost} />
         </div>
     )
 }
