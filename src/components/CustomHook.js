@@ -136,7 +136,7 @@ function CustomMemeGenerator({ apiCall, btnName }){
       <div className='container memeContainer' >
         {apiData!=null ? 
         <div className='randomMeme' >
-            <div className='memeRandom' >
+            <div className='memeRandom text-center' >
                <p className='h4' >{apiData.name}</p>;
                <img src={apiData.url} alt='meme' style={{ 
             height : apiData.height>500 ? 'apiData.height:500px' : `${apiData.height}px`,

@@ -1,5 +1,4 @@
 .mainBody{
-    /* border:2px solid black; */
     padding:2rem
 }
 
@@ -19,7 +18,7 @@
 }
 
 .mainBody .container .card{
-    width: 30rem;
+    width: fit-content;
     height: fit-content;
 }
 
@@ -28,6 +27,24 @@
 }
 
 .mainBody .memeContainer{
-    /* border:  none; */
-    height: none;
+   height: 30rem;
+   display: flex;
+   align-items: center;
+
+}
+
+.mainBody .memeContainer .randomMeme{
+    height: 28rem;
+    width: 50rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.mainBody .memeContainer .randomMeme .memeRandom p{
+    padding-bottom: 2rem;
+}
+
+.mainBody .memeContainer .randomMeme .memeRandom img{
+    width: auto;
+    height: auto;
 }
