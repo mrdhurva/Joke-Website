@@ -35,7 +35,7 @@
 
 .mainBody .memeContainer .randomMeme{
     height: 28rem;
-    width: 50rem;
+    width: fit-content;
     overflow: scroll;
     overflow-x: hidden;
 }

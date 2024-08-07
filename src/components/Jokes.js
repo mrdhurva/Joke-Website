@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomHook, { CustomHindiHook, CustomHookDifferentCall, CustomMemeGenerator, CustomProgrammingMemeGenerator, WasteHook } from './CustomHook';
+import CustomHook, { CustomHindiHook, CustomHookDifferentCall, CustomHumorMeme, CustomMemeGenerator, CustomProgrammingMemeGenerator, WasteHook } from './CustomHook';
 // import randomJoke from '../componentcss/randomJoke.css'
 
 function RandomJoke(){
@@ -94,9 +94,14 @@ function ProgrammingMemeGenerator(){
 }
 
 function HumorMemeGenerator(){
+    const apiUrl='https://humor-jokes-and-memes.p.rapidapi.com/memes/random?keywords=rocket&number=3&media-type=image&keywords-in-image=false&min-rating=4';
+    const apiKey='d826938a64msh57fb42b9c95b27cp10bed4jsn8a6a07919a93';
+    const apiHost='humor-jokes-and-memes.p.rapidapi.com';
+
     return(
         <div className='container-fluid' >
             <TitleName title='Humor Meme Generator' />
+            <CustomHumorMeme apiCall={apiUrl} callKey={apiKey} callHost={apiHost} />
         </div>
     )
 }

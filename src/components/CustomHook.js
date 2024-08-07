@@ -168,8 +168,8 @@ function CustomProgrammingMemeGenerator({ apiCall, callKey, callHost, btnName })
       // console.log(apiUrl)
       const apiResponse = await apiUrl.json();
       const randomNumber=Math.ceil(Math.random()*10);
-      // console.log(randomNumber)
-      console.log(apiResponse[randomNumber])
+      console.log(apiResponse)
+      // console.log(apiResponse[randomNumber])
       setApiData(apiResponse[randomNumber])
     } catch (error) {
       console.log(error)
@@ -186,6 +186,48 @@ function CustomProgrammingMemeGenerator({ apiCall, callKey, callHost, btnName })
           <div className='randomMeme' >
             <div className='memeRandom text-center' >
               <img src={apiData.image} alt='meme' />
+            </div>
+          </div>
+          : null}
+      </div>
+    </div>
+  )
+}
+
+function CustomHumorMeme({ apiCall, callKey, callHost, btnName }){
+  const [apiData, setApiData] = useState(null);
+
+  const url = apiCall;
+  const options = {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-key': callKey,
+      'x-rapidapi-host': callHost
+    }
+  }
+
+  const handleApiData = async () => {
+    try {
+      const apiUrl = await fetch(url, options);
+      // console.log(apiUrl)
+      const apiResponse = await apiUrl.json();
+      console.log(apiResponse)
+      setApiData(apiResponse)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return (
+    <div className='mainBody' >
+      <div className='inputBar' >
+        <button type='submit' className='btn btn-primary' onClick={handleApiData} >Generate {btnName}</button>
+      </div>
+      <div className='container memeContainer' >
+        {apiData != null ?
+          <div className='randomMeme' >
+            <div className='memeRandom text-center' >
+              <img src={apiData.url} alt='meme' />
             </div>
           </div>
           : null}
@@ -225,5 +267,5 @@ function WasteHook({ apiCall }) {
   )
 }
 
-export { CustomHookDifferentCall, WasteHook, CustomHindiHook, CustomMemeGenerator, CustomProgrammingMemeGenerator }
+export { CustomHookDifferentCall, CustomHumorMeme, WasteHook, CustomHindiHook, CustomMemeGenerator, CustomProgrammingMemeGenerator }
 export default CustomHook
